@@ -1,0 +1,293 @@
+/* 为后台相关的页面提供css样式 */
+
+/* :root这个样式里面有多个变量，当有组件用了type="变量名"的时候，组件的颜色就会变成该变量设置的颜色 */
+:root {
+    --primary: #365ec2;
+    --secondary: #347fcb;
+    --success: #365ec2;
+    --info: #8e8bf5;
+    --warning: #e14b85;
+    --danger: #e92e2e;
+    --tableHeaderBg: #efefef;
+    --tableHeaderColor: #7e7e94;
+    --text: #5b10c7;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei UI", serif;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+body {
+    background-color: #ffffff;
+    font-size: 16px;
+    color: #666;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.manager-header {
+    height: 60px;
+    line-height: 60px;
+    background: #0d2e71;
+    display: flex;
+    box-shadow: 10px 10px 10px #f3f0f0;
+}
+.manager-header-content {
+    height: 60px;
+    line-height: 60px;
+    padding-left: 10px;
+    display: flex;
+}
+
+.manager-header-left {
+    width: 400px;
+    color: #f8f7f7;
+    font-size: 12px;
+    font-weight: bolder;
+    display: flex;
+    text-align: left;
+    align-items: center;
+
+}
+.title {
+    flex: 1;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.manager-header-left img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+}
+.manager-header-center {
+    flex: 1;
+    color: #f8f7f7;
+    padding-right: 10px;
+    text-align: right;
+    font-weight: bold;
+}
+.manager-header-right {
+    display: flex;
+    width: 80px;
+    text-align: center;
+    align-items: center;
+
+
+}
+.avatar-box {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.manager-header-right img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.el-submenu__icon-arrow {
+    margin-top: -5px;
+    color: #fff !important;
+}
+.el-submenu__title {
+    height: 40px;
+    line-height: 40px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    background-color: #0d2e71;
+    border-left-color: var(--primary);
+}
+.el-menu-item {
+    height: 40px !important;
+    line-height: 40px !important;
+    color: rgba(255,255,255,.7);
+    padding-left: 52px !important;
+    font-size: 12px;
+    background-color: #1343a3 !important;
+}
+.el-menu-item:hover, .el-submenu__title:hover {
+    background: linear-gradient(to right, rgba(61, 29, 147, 0.2), #18023b);
+
+}
+.el-submenu__title:hover {
+    border-left: 5px solid var(--tableHeaderColor);
+    transition: border-left .2s;
+}
+.el-menu-item.is-active {
+    color: #fff;
+    font-size: 14px;
+    background: linear-gradient(to right, rgba(61, 29, 147, 0.2), #18023b);
+    padding-left: 52px !important;
+}
+.main-nav {
+    width: 200px;
+    height: 100%;
+}
+.main-nav-menu {
+    background-color: #0d2e71;
+    min-height: calc(100vh - 60px);
+    border: none;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+.main-body {
+    flex: 1;
+    padding:20px;
+    width: 0;
+}
+.main-body-index {
+    flex: 1;
+    padding:20px;
+    width: 0;
+}
+.main-body-header {
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    width: 700px;
+    color: #0c0c0c;
+}
+.main-body-content {
+    background-color: white;
+    margin: 20px 0;
+    padding: 10px;
+}
+.main-body-search {
+    display:flex;
+    text-align: left;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.main-table-box {
+    margin-top: 10px;
+    width: calc(100vw - 260px);
+}
+.el-table th.el-table__cell.is-leaf {
+    border-bottom: 1px solid #dee2e6;
+}
+.main-input {
+    width: 300px;
+    border-radius: 25%;
+    margin-left: 500px;
+    margin-right: 5px !important;
+}
+.el-input__inner {
+    border: 1px solid #ced4da !important;
+    border-radius: 2px !important;
+}
+.el-textarea__inner {
+    border: 1px solid #ced4da !important;
+}
+.el-button {
+    border-radius: 2px !important;
+    margin-left: 5px;
+}
+
+/* --text和--default是一些按钮的原生样式，在浏览器里才检查的到 */
+.el-button--text {
+    border-color: #dcefe6;
+    width: 55px !important;
+    background: 0 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.el-button--text:hover {
+    border-color: #dcefe6;
+    background-color: #eef7fe !important;
+    width: 55px !important;
+    background: 0 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* .el-button--default {
+    border-color: transparent;
+    background-color: var(--text) !important;
+    color: white !important;
+    width: 55px !important;
+    background: 0 0;
+    padding-left: 0;
+    padding-right: 0;
+} */
+
+.el-button--primary {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+.el-button--danger {
+    background-color: var(--danger) !important;
+    border-color: var(--danger) !important;
+}
+.el-button--success {
+    background-color: var(--success) !important;
+    border-color: var(--success) !important;
+}
+.el-button--info {
+    background-color: var(--info) !important;
+    border-color: var(--info) !important;
+}
+.el-button--warning {
+    background-color: var(--warning) !important;
+    border-color: var(--warning) !important;
+}
+
+
+.el-pager li:not(.disabled).active {
+    background-color: var(--primary) !important;
+}
+.el-form-item {
+    margin-bottom: 5px !important;
+}
+.el-table .cell {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.el-table__row .el-button {
+    margin: 0 2px !important;
+}
+.el-notification__content {
+    margin: 0;
+}
+.el-notification__group {
+    display: flex;
+    align-items: center;
+}
+.tableHeaderClass{
+    background-color: var(--tableHeaderBg) !important;
+    color: var(--tableHeaderColor);
+    font-weight: bolder;
+    font-size: 14px;
+    height: 60px;
+}
+.cell {
+    font-size: 13px !important;
+}
+table {
+    border: 1px solid #EBEEF5;
+    border-collapse: collapse !important;
+}
+td {
+    border: 1px solid #EBEEF5 !important;
+}
+.el-dropdown-menu__item:hover {
+    color: var(--primary) !important;
+    background-color: #f3faf3 !important;
+}
+.el-pager .number:not(.active):hover {
+    color: var(--primary) !important;
+}

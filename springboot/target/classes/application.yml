@@ -1,0 +1,36 @@
+# 项目配置文件，定义项目的属性和配置
+
+# 服务器配置，设置监听的端口为8080
+server:
+  port: 8080
+
+# 数据库配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root # 本地的数据库用户名
+    password: 123456 # 本地的数据库密码
+    # 数据库连接url
+    url: jdbc:mysql://localhost:3306/common-market?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true
+  # spring主配置
+  main:
+    allow-circular-references: true
+  # servlet多部分请求配置，上传文件的最大尺寸
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+# 配置mybatis实体和xml映射
+mybatis:
+  mapper-locations: classpath:mapper/*.xml # 指定mybatis映射文件的位置
+  type-aliases-package: com.njxzc.entity # 指定实体类包名
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 分页创建配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
